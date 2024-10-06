@@ -1,0 +1,188 @@
+#details-panel {
+    font-family: "Space Grotesk", sans-serif;
+    position: fixed;
+    top: 0px; /* Adjust based on your layout */
+    left: 0px; /* Adjust based on your layout */
+    width: 600px; /* Set a fixed width */
+    height: 100%;
+    color: #f9f9f9;
+    background-color:rgba(0, 0, 0, 0.4);/* Slightly transparent white background */
+    border: 1px solid #3a3a3a; /* Light border */
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+    border-radius: 8px; /* Rounded corners */
+    z-index: 1000; /* Make sure it appears above other elements */
+    overflow: auto; /* Hide overflow for rounded corners */
+    padding: 30px;
+    transition: transform 0.3s ease; /* Smooth transition */
+    transform: translateX(0); /* Start position */
+}
+
+
+#details-panel.slide-out {
+    transform: translateX(-100%); /* Move out of view */
+}
+
+#details-panel .details-close {
+    background: #0000;
+    display: block;
+    height: 40px;
+    padding: 0;
+    pointer-events: all;
+    position: absolute;
+    right: 10px;
+    top: 20px;
+    width: 30px;
+    height: 30px;
+    background: url('./assets/white-close.png') no-repeat center center;
+    z-index: 100;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+/* Button styling */
+#details-panel .button {
+    display: inline-block;
+    margin-top: 1.5em;
+    padding: 10px 15px;
+    border: 1px solid rgba(255, 255, 255, 0.5); /* Subtle border */
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth hover transition */
+}
+
+#details-panel .button:hover {
+    background: rgba(255, 255, 255, 0.1); /* Light overlay on hover */
+}
+#details-panel h1 {
+    font-size: 3.5em;
+    font-weight: 550;
+    line-height: 1em;
+    margin-bottom: 0.2em;
+    margin-top: 0.6em;
+    padding: 0 var(--paddingSize);
+    color: white; /* Darker text for better contrast */
+}
+
+#details-panel .category {
+    font-family: var(--font2);
+    font-size: 1.2em;
+    font-weight: 300;
+    margin: 0 0 0.5em;
+    padding: 0 var(--paddingSize);
+}
+
+#details-panel .category span,
+#details-panel .category:before {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#details-panel .category:before {
+    background: #0000;
+    background-position-x: 0;
+    content: "";
+    height: 30px;
+    margin-right: 0.5em;
+    width: 30px;
+}
+
+.image-container {
+    width: 600px; /* Set the desired width of the image container */
+    height: 300px; /* Set the desired height of the image container */
+    overflow: hidden; /* Hide the part of the image that overflows */ /* Optional: Use this to make it circular, like a planet */
+    position: relative;
+  }
+  
+  .image-container img {
+    width: 100%; /* Scale image to container width */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Cover the container while maintaining the aspect ratio */
+    display: block;
+  }
+
+#details-panel .description {
+    font-family: var(--font1);
+    padding: 0 var(--paddingSize);
+    width: 100%;
+    font-size: 1.5em;
+    line-height: 1.5em;
+}
+
+
+#details-panel .quickfacts {
+    display: grid;
+    gap: 0.7em 3em;
+    font-size: 1.5em;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto auto auto;
+    margin: 1em var(--paddingSize);
+    width: calc(100% - var(--paddingSize) * 2);
+}
+
+/* Highlighted Data */
+#details-panel .highlight {
+    color: #ffa500; /* Bright orange color for emphasis */
+    font-size: 2em;
+    margin-bottom: 1.5em;
+    margin-top: -15px;
+}
+#details-panel .infolike {
+    margin-top: 10px;
+    color: rgba(255, 255, 255, 0.7); /* Lighter text for extra info */
+    font-size: 20px;
+}
+
+/* Separator lines */
+#details-panel hr {
+    border: 0;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.3);
+    margin: 1.5em 0;
+}
+
+#details-panel .data-block,
+#details-panel .data-block .data {
+    align-items: center;
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+#details-panel .data-block .data {
+    font-family: var(--font1);
+    font-size: 1.8em;
+    font-weight: 400;
+    pointer-events: all;
+    user-select: text;
+    color: #333; /* Darker text for better readability */
+}
+
+#details-panel .footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    margin-top: 2em;
+    padding: 1.5em 0;
+    position: relative;
+    text-align: center;
+    
+    font-size: 0.9em; /* Slightly smaller footer text */
+}
+
+#details-panel .read-more {
+    cursor: pointer;
+    display: block;
+    font-family: var(--font1);
+    font-size: 0.8em;
+    font-weight: 400;
+    margin: 1em 0 1.5em;
+    outline: none;
+    padding: 0 var(--paddingSize);
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #007BFF; /* Link color */
+}
+
+#details-panel .read-more:hover {
+    text-decoration: underline; /* Underline on hover */
+}

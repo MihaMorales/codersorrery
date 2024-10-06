@@ -1,0 +1,14 @@
+/* hover-label.css */
+.hover-label {
+    font-family: "Space Grotesk", sans-serif;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.75);
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 4px;
+    pointer-events: none; /* Prevent the label from blocking other events */
+    font-size: 22px;
+    z-index: 1000;
+    cursor: pointer;
+  }
+  
